@@ -1,7 +1,7 @@
 import {LoginForm, ProFormText} from '@ant-design/pro-components';
-import {message, Tabs} from 'antd';
+import {Divider, message, Space, Tabs, Tooltip} from 'antd';
 import React, {useState} from 'react';
-import {history} from 'umi';
+import {history, Link} from 'umi';
 import styles from './index.less';
 import {SYSTEM_LOGO} from "@/constants";
 import {LockOutlined, UserOutlined} from "@ant-design/icons";
@@ -20,7 +20,7 @@ const Register: React.FC = () => {
       try {
         // 注册
         const id = await register(values);
-        if (id > 0) {
+        if (id) {
           const defaultLoginSuccessMessage = '注册成功！';
           message.success(defaultLoginSuccessMessage);
           /** 此方法会跳转到 redirect 参数所在的位置 */
@@ -32,7 +32,7 @@ const Register: React.FC = () => {
           });
           return;
         }
-      } catch (error) {
+      } catch (error: any) {
         const defaultLoginFailureMessage = '注册失败，请重试！';
         message.error(defaultLoginFailureMessage);
       }
@@ -130,6 +130,24 @@ const Register: React.FC = () => {
                 />
               </>
             )}
+            <div
+              style={{
+                marginBottom: 24,
+              }}
+            >
+              <Space split={<Divider type={"vertical"}/>}>
+                <Link to="/user/login">已有账号, 去登录</Link>
+                <a
+                  style={{
+                    float: 'right',
+                  }}
+                >
+                  <Tooltip placement="right" title="请联系管理员">
+                    <span>忘记密码 ?</span>
+                  </Tooltip>
+                </a>
+              </Space>
+            </div>
           </LoginForm>
         </div>
         <Footer/>
