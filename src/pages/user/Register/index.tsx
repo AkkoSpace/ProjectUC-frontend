@@ -114,6 +114,20 @@ const Register: React.FC = () => {
                     }
                   ]}
                 />
+                <ProFormText
+                  name="lazyKey"
+                  fieldProps={{
+                    size: 'large',
+                    prefix: <UserOutlined className={styles.prefixIcon}/>,
+                  }}
+                  placeholder={'请输入专属密钥'}
+                  rules={[
+                    {
+                      required: true,
+                      message: '专属密钥是必填项！',
+                    },
+                  ]}
+                />
               </>
             )}
           </LoginForm>

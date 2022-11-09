@@ -32,6 +32,11 @@ const columns: ProColumns<API.CurrentUser>[] = [
   {
     title: '性别',
     dataIndex: 'gender',
+    valueType: 'select',
+    valueEnum: {
+      0: {text: '女'},
+      1: {text: '男'},
+    },
   },
   {
     title: '电话',
@@ -46,6 +51,10 @@ const columns: ProColumns<API.CurrentUser>[] = [
   {
     title: '状态',
     dataIndex: 'userStatus',
+  },
+  {
+    title: '专属密钥',
+    dataIndex: 'lazyKey',
   },
   {
     title: '角色',

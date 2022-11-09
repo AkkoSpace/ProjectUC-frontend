@@ -12,6 +12,7 @@ declare namespace API {
     phone?: string;
     status?: number;
     userRole?: number;
+    lazyKey?: string;
     createTime?: Date;
   };
 
@@ -66,6 +67,7 @@ declare namespace API {
     userAccount?: string;
     userPassword?: string;
     checkPassword?: string;
+    lazyKey?: string;
     type?: string;
   };
 
