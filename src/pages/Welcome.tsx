@@ -1,8 +1,9 @@
-import { PageContainer } from '@ant-design/pro-components';
-import { Alert, Card, Typography } from 'antd';
+import {PageContainer} from '@ant-design/pro-components';
+import {Alert, Card, Typography} from 'antd';
 import React from 'react';
 import styles from './Welcome.less';
-const CodePreview: React.FC = ({ children }) => (
+
+const CodePreview: React.FC = ({children}) => (
   <pre className={styles.pre}>
     <code>
       <Typography.Text copyable>{children}</Typography.Text>
@@ -14,7 +15,7 @@ const Welcome: React.FC = () => {
     <PageContainer>
       <Card>
         <Alert
-          message={'更快更强的重型组件，已经发布。'}
+          message={'用户管理中心，现已发布！'}
           type="success"
           showIcon
           banner
@@ -23,16 +24,6 @@ const Welcome: React.FC = () => {
             marginBottom: 24,
           }}
         />
-        <Typography.Text strong>
-          <a
-            href="https://procomponents.ant.design/components/table"
-            rel="noopener noreferrer"
-            target="__blank"
-          >
-            欢迎使用
-          </a>
-        </Typography.Text>
-        <CodePreview>yarn add @ant-design/pro-components</CodePreview>
       </Card>
     </PageContainer>
   );
